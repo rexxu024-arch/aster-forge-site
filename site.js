@@ -104,6 +104,38 @@ document.querySelectorAll("[data-request-builder]").forEach((form) => {
   });
 });
 
+document.querySelectorAll("[data-prefill-request]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const form = document.querySelector("[data-request-builder]");
+    if (!form) {
+      return;
+    }
+
+    const fields = {
+      businessType: link.dataset.businessType,
+      surface: link.dataset.surface,
+      scope: link.dataset.scope,
+      direction: link.dataset.direction,
+    };
+
+    Object.entries(fields).forEach(([name, value]) => {
+      if (!value) {
+        return;
+      }
+      const field = form.elements.namedItem(name);
+      if (field) {
+        field.value = value;
+      }
+    });
+
+    form.dispatchEvent(new Event("change", { bubbles: true }));
+    const status = document.querySelector("[data-copy-status]");
+    if (status) {
+      status.textContent = "Builder prefilled from the selected playbook. Add the weak image link or short description next.";
+    }
+  });
+});
+
 document.querySelectorAll("[data-save-draft]").forEach((button) => {
   const form = button.closest("form");
   const status = form?.querySelector("[data-account-status]");

@@ -294,12 +294,37 @@ a {
   background: rgba(255, 250, 242, 0.6);
 }
 
+.inline-cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.95rem;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.72);
+  padding: 0.48rem 0.72rem;
+  color: var(--teal-deep);
+  font-size: 0.78rem;
+  font-weight: 850;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
 .topbar nav a:hover,
 .nav-cta:hover,
 .button:hover,
-.account-menu summary:hover {
+.account-menu summary:hover,
+.inline-cta:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 25px rgba(20, 20, 21, 0.1);
+}
+
+.inline-cta:focus-visible {
+  outline: 2px solid rgba(15, 118, 110, 0.55);
+  outline-offset: 2px;
 }
 
 .hero {
