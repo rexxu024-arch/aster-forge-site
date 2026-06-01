@@ -17,18 +17,17 @@ Deployment target:
 
 - Cloudflare Pages project: `aster-forge`
 - Domain: `https://aster-forge.com`
+- GitHub: `https://github.com/rexxu024-arch/aster-forge-site`
 
-Recommended deploy command:
+Current production deploy command:
 
 ```powershell
 npx wrangler pages deploy . --project-name aster-forge
 ```
 
-GitHub/Cloudflare connection:
+Current state:
 
-1. Create a GitHub repo named `aster-forge-site`.
-2. Push this folder to that repo.
-3. In Cloudflare Pages, create a Pages project from that GitHub repo.
-4. Build command: leave empty.
-5. Build output directory: `/`.
-6. Custom domain: `aster-forge.com`.
+- The public repo is pushed to GitHub for source history and portability.
+- The live Cloudflare Pages project currently deploys through Wrangler Direct Upload.
+- Custom domains `aster-forge.com` and `www.aster-forge.com` are active.
+- If true Git-triggered continuous deployment becomes important, create a fresh Git-integrated Pages project or migrate intentionally; do not upload the OpenClaw factory repo.

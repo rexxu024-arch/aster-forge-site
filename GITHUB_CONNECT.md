@@ -4,16 +4,16 @@ This repo is meant to be the public deployment repo, separate from OpenClaw.
 
 ## GitHub
 
-Create a GitHub repository:
+Current repository:
 
 ```text
-aster-forge-site
+https://github.com/rexxu024-arch/aster-forge-site
 ```
 
-Then run from this folder:
+If this repo is restored on a new machine, reconnect it from this folder:
 
 ```powershell
-git remote add origin https://github.com/<your-account>/aster-forge-site.git
+git remote add origin https://github.com/rexxu024-arch/aster-forge-site.git
 git branch -M main
 git push -u origin main
 ```
@@ -26,7 +26,31 @@ cookies or tokens into this repo.
 
 ## Cloudflare Pages
 
-Recommended production path:
+Current production path:
+
+```powershell
+npx wrangler pages deploy . --project-name aster-forge --branch main
+```
+
+The live project is:
+
+```text
+aster-forge
+```
+
+Active domains:
+
+```text
+https://aster-forge.com
+https://www.aster-forge.com
+https://aster-forge.pages.dev
+```
+
+Important: the current project was created through Wrangler/Direct Upload.
+Direct Upload is stable and simple, but it is not a Git-triggered Pages project.
+Keep pushing this repo to GitHub for source backup, then deploy with Wrangler.
+
+Optional future migration to Git-triggered Pages:
 
 1. Workers & Pages
 2. Create application
@@ -35,7 +59,7 @@ Recommended production path:
 5. Pick `aster-forge-site`
 6. Build command: empty
 7. Build output directory: `/`
-8. Add custom domain: `aster-forge.com`
+8. Move custom domains only after the new Pages project is verified
 
 Fallback:
 
