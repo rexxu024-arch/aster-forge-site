@@ -1,0 +1,24 @@
+# Local/editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Never commit private control-plane material here
+.env
+.env.*
+private/
+Database/
+Reports/
+Review_Packets/
+Output/
+Release/
+adobe_stock_factory/
+node_modules/
+
+# Keep this repo static/public-safe only
+*.csv
+*.json
+*.ps1
+*.py
+*.cmd
+*.bat
