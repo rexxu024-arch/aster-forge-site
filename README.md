@@ -23,3 +23,12 @@ Recommended deploy command:
 ```powershell
 npx wrangler pages deploy . --project-name aster-forge
 ```
+
+GitHub/Cloudflare connection:
+
+1. Create a GitHub repo named `aster-forge-site`.
+2. Push this folder to that repo.
+3. In Cloudflare Pages, create a Pages project from that GitHub repo.
+4. Build command: leave empty.
+5. Build output directory: `/`.
+6. Custom domain: `aster-forge.com`.
