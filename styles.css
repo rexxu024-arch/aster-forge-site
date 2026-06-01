@@ -3776,8 +3776,8 @@ footer a {
 
   .topbar-actions {
     grid-area: actions;
-    justify-content: flex-start;
-    gap: 0.5rem;
+    justify-content: flex-end;
+    gap: 0.42rem;
   }
 
   .account-panel {
@@ -3794,6 +3794,24 @@ footer a {
 
   .nav-cta {
     width: max-content;
+    padding-inline: 0.72rem;
+  }
+
+  .topbar nav a,
+  .nav-cta,
+  .account-menu summary {
+    padding: 0.48rem 0.68rem;
+    font-size: 0.78rem;
+  }
+
+  .account-menu summary span:last-child {
+    display: none;
+  }
+
+  .account-avatar {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.58rem;
   }
 
   .hero {
