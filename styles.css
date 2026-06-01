@@ -2127,6 +2127,138 @@ h1 {
   line-height: 1.55;
 }
 
+.fit-check-section {
+  padding-top: 5rem;
+}
+
+.fit-check-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.fit-check-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 14rem;
+  border: 1px solid rgba(20, 20, 21, 0.12);
+  border-radius: 8px;
+  padding: 1.2rem;
+  background:
+    radial-gradient(circle at 86% 10%, var(--fit-glow, rgba(15, 118, 110, 0.14)), transparent 32%),
+    linear-gradient(135deg, var(--fit-bg-a, rgba(255, 253, 247, 0.92)), var(--fit-bg-b, rgba(235, 244, 238, 0.76)));
+  box-shadow: 0 12px 30px rgba(22, 18, 13, 0.08);
+}
+
+.fit-check-card::before {
+  position: absolute;
+  inset: auto 1rem 1rem auto;
+  width: 4.6rem;
+  height: 4.6rem;
+  border: 1px solid rgba(20, 20, 21, 0.08);
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent 0 46%, rgba(20, 20, 21, 0.08) 46% 54%, transparent 54%),
+    linear-gradient(0deg, transparent 0 46%, rgba(20, 20, 21, 0.08) 46% 54%, transparent 54%),
+    rgba(255, 253, 247, 0.32);
+  content: "";
+}
+
+.fit-check-card span {
+  display: inline-flex;
+  margin-bottom: 0.72rem;
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.64);
+  padding: 0.35rem 0.56rem;
+  color: var(--fit-accent, var(--teal-deep));
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.fit-check-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 16rem;
+  margin-bottom: 0.55rem;
+  font-size: 1.18rem;
+  line-height: 1.14;
+}
+
+.fit-check-card p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.fit-good {
+  --fit-accent: #0f766e;
+  --fit-bg-a: rgba(255, 253, 247, 0.94);
+  --fit-bg-b: rgba(226, 241, 235, 0.78);
+  --fit-glow: rgba(15, 118, 110, 0.18);
+}
+
+.fit-safe {
+  --fit-accent: #83601f;
+  --fit-bg-a: rgba(255, 251, 241, 0.94);
+  --fit-bg-b: rgba(247, 232, 202, 0.76);
+  --fit-glow: rgba(183, 129, 47, 0.2);
+}
+
+.fit-boundary {
+  --fit-accent: #a24332;
+  --fit-bg-a: rgba(255, 250, 246, 0.94);
+  --fit-bg-b: rgba(244, 224, 218, 0.76);
+  --fit-glow: rgba(199, 91, 69, 0.18);
+}
+
+.fit-check-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+  border: 1px solid rgba(8, 63, 59, 0.17);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(20, 20, 21, 0.94), rgba(8, 63, 59, 0.93)),
+    var(--charcoal);
+  padding: 1rem;
+  color: #fffaf2;
+}
+
+.fit-check-flow div {
+  min-height: 5.8rem;
+  border: 1px solid rgba(255, 250, 242, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.06);
+  padding: 0.9rem;
+}
+
+.fit-check-flow span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #8fd0c8;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.fit-check-flow strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.fit-check-flow i {
+  display: block;
+  width: 2.2rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(143, 208, 200, 0.22), rgba(143, 208, 200, 0.82));
+}
+
 .future-lanes {
   padding-bottom: 4rem;
 }
@@ -3716,6 +3848,7 @@ footer a {
   .project-route-visual,
   .quality-board-visual,
   .package-ladder-visual,
+  .fit-check-flow,
   .contact-case-board {
     grid-template-columns: 1fr;
   }
@@ -3742,6 +3875,13 @@ footer a {
     display: none;
   }
 
+  .fit-check-flow i {
+    width: 2px;
+    height: 1.8rem;
+    justify-self: center;
+    background: linear-gradient(180deg, rgba(143, 208, 200, 0.22), rgba(143, 208, 200, 0.82));
+  }
+
   .merchant-pack-featured {
     grid-row: auto;
   }
@@ -3756,6 +3896,7 @@ footer a {
   }
 
   .audit-lab-board,
+  .fit-check-board,
   .package-grid,
   .fit-grid,
   .ladder-steps,
@@ -3921,6 +4062,7 @@ footer a {
   .fit-grid,
   .ladder-steps,
   .request-builder,
+  .fit-check-board,
   .package-grid,
   .intake-grid,
   .intake-proof-row,
