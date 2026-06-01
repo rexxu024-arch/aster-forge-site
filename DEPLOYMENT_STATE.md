@@ -31,7 +31,14 @@ python .\Brand_Site\ClawVisuals\tools\deploy_public_site.py --message "Update As
 
 This runs public asset QA, rebuilds the sanitized public package, syncs this
 repo, commits/pushes changes, deploys to Cloudflare Pages, and checks the live
-URLs.
+URLs. By default it also runs the shared-Edge visual QA screenshot pass after
+live URL and asset verification.
+
+Optional post-deploy visual QA only:
+
+```powershell
+npm run site:aster:visual-qa
+```
 
 ## Boundary
 
