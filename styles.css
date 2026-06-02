@@ -515,6 +515,94 @@ h1 {
   padding: 6rem 4vw 0;
 }
 
+.proof-range-section {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.34fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  margin: 1rem 4vw 0;
+  border: 1px solid rgba(20, 20, 21, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(235, 244, 238, 0.78)),
+    rgba(255, 255, 255, 0.64);
+  padding: clamp(1rem, 2vw, 1.35rem);
+  box-shadow: 0 18px 48px rgba(22, 18, 13, 0.08);
+}
+
+.proof-range-head {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+  padding: clamp(0.4rem, 1vw, 0.8rem);
+}
+
+.proof-range-head h2 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.04;
+}
+
+.proof-range-head p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--soft-ink);
+  line-height: 1.6;
+}
+
+.proof-range-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr 0.88fr;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.proof-range-card {
+  position: relative;
+  min-height: clamp(14rem, 22vw, 22rem);
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 21, 0.1);
+  border-radius: 8px;
+  background: #ece7dc;
+  box-shadow: 0 16px 38px rgba(22, 18, 13, 0.1);
+}
+
+.proof-range-card-wide {
+  grid-row: span 2;
+}
+
+.proof-range-card img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.proof-range-card div {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1rem;
+  background: linear-gradient(180deg, transparent, rgba(9, 12, 10, 0.78));
+  color: #fffaf2;
+}
+
+.proof-range-card span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: rgba(255, 250, 242, 0.78);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.proof-range-card h3 {
+  margin-bottom: 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.45rem);
+  line-height: 1.12;
+}
+
+.proof-range-card-dark div {
+  background: linear-gradient(180deg, transparent, rgba(8, 63, 59, 0.82));
+}
+
 .audit-lab-section {
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(22rem, 1fr);
@@ -592,6 +680,35 @@ h1 {
 .audit-lab-board p {
   color: var(--muted);
   line-height: 1.52;
+}
+
+.audit-lab-board-visual article {
+  align-content: start;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: rgba(255, 250, 242, 0.72);
+}
+
+.audit-card-with-image img {
+  height: clamp(10.5rem, 15vw, 15.5rem);
+  object-fit: cover;
+  border-bottom: 1px solid rgba(20, 20, 21, 0.08);
+}
+
+.audit-card-with-image span,
+.audit-card-with-image strong,
+.audit-card-with-image p {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.audit-card-with-image span {
+  margin-top: 1rem;
+}
+
+.audit-card-with-image p {
+  margin-bottom: 1rem;
 }
 
 .audit-lab-cta {
@@ -684,6 +801,79 @@ h1 {
   color: #745217;
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+.counsel-section {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.42fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  padding-top: 4.25rem;
+}
+
+.counsel-copy {
+  display: grid;
+  align-content: center;
+  border: 1px solid rgba(20, 20, 21, 0.1);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(183, 129, 47, 0.16), transparent 32%),
+    linear-gradient(145deg, rgba(255, 253, 247, 0.94), rgba(238, 243, 235, 0.78));
+  padding: clamp(1.35rem, 2.2vw, 2rem);
+  box-shadow: 0 16px 38px rgba(22, 18, 13, 0.08);
+}
+
+.counsel-copy h2 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(2rem, 3.2vw, 3.35rem);
+  line-height: 1.04;
+}
+
+.counsel-copy p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--soft-ink);
+  line-height: 1.62;
+}
+
+.counsel-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.counsel-visual-grid figure {
+  display: grid;
+  grid-template-rows: minmax(13rem, 1fr) auto;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.74);
+  box-shadow: 0 16px 38px rgba(22, 18, 13, 0.08);
+}
+
+.counsel-visual-grid img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.counsel-visual-grid figcaption {
+  padding: 1rem;
+}
+
+.counsel-visual-grid span {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--teal);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.counsel-visual-grid strong {
+  display: block;
+  line-height: 1.25;
 }
 
 .studio-manifest {
@@ -3830,6 +4020,8 @@ footer a {
   .split-section,
   .group-intro,
   .fit-copy,
+  .proof-range-section,
+  .counsel-section,
   .audit-lab-section,
   .studio-manifest,
   .lab-board,
@@ -3896,6 +4088,8 @@ footer a {
   }
 
   .audit-lab-board,
+  .proof-range-grid,
+  .counsel-visual-grid,
   .fit-check-board,
   .package-grid,
   .fit-grid,
@@ -4052,12 +4246,15 @@ footer a {
 
   .hero-tile-large,
   .hero-tile-wide,
+  .proof-range-card-wide,
   .feature-card {
     grid-column: auto;
     grid-row: auto;
   }
 
   .signal-strip,
+  .proof-range-grid,
+  .counsel-visual-grid,
   .audit-lab-board,
   .fit-grid,
   .ladder-steps,
