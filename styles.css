@@ -2702,12 +2702,13 @@ h1 {
   --step-soft: rgba(15, 118, 110, 0.14);
   --step-wash: rgba(237, 247, 241, 0.82);
   position: relative;
-  min-height: 13rem;
+  overflow: hidden;
+  min-height: 22rem;
   border-color: rgba(20, 20, 21, 0.1);
   background:
     linear-gradient(145deg, rgba(255, 253, 247, 0.92), var(--step-wash)),
     radial-gradient(circle at 88% 12%, var(--step-soft), transparent 28%);
-  padding: 1.3rem;
+  padding: 0 1.3rem 1.3rem;
   box-shadow: 0 16px 34px rgba(22, 18, 13, 0.08);
   counter-increment: project-step;
 }
@@ -2734,6 +2735,17 @@ h1 {
   background: var(--paper);
   content: "";
   transform: translateY(-50%) rotate(45deg);
+}
+
+.process-grid article > img {
+  width: calc(100% + 2.6rem);
+  max-width: none;
+  height: clamp(10.5rem, 13vw, 14.25rem);
+  margin: 0 -1.3rem 1rem;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid rgba(20, 20, 21, 0.08);
+  background: rgba(20, 20, 21, 0.04);
 }
 
 .process-grid article:nth-child(1) {
