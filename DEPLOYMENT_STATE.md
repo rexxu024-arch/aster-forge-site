@@ -2,6 +2,13 @@
 
 Last updated by `sync_public_repo.py`.
 
+## Verified production release — 2026-09-26
+
+- GitHub source commit: `4a56142d9ef6682e24f90e467441f881ef15f09c` — `feat(aster): launch context-led custom gift collection`
+- Cloudflare Pages production deployment: `https://7dd7f22f.aster-forge.pages.dev`
+- Release payload: 84 public runtime files / 10.38 MiB, uploaded as a static-only archive. It contained the site runtime, `_headers`, `_redirects`, and public assets only—no Git internals, credentials, factory sources, or private delivery material.
+- Public sentinels passed: `https://aster-forge.com/` renders the three-poster Collection hero; `https://aster-forge.com/custom-gifts` loads all three collection assets; `https://aster-forge.com/before-after` redirects to the Collection; no console errors on the verified public routes.
+
 ## Live URLs
 
 - https://aster-forge.com
