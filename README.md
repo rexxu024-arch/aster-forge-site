@@ -19,15 +19,14 @@ Deployment target:
 - Domain: `https://aster-forge.com`
 - GitHub: `https://github.com/rexxu024-arch/aster-forge-site`
 
-Current production deploy command:
+Deployment route:
 
-```powershell
-npx wrangler pages deploy . --project-name aster-forge
-```
+- Canonical source: `https://github.com/rexxu024-arch/aster-forge-site`, branch `main`.
+- Intended production control plane: Cloudflare Pages Git integration on the existing `aster-forge` project.
+- Custom domains `aster-forge.com` and `www.aster-forge.com` stay attached to that project.
 
-Current state:
+Fresh dashboard readback — 2026-09-26:
 
-- The public repo is pushed to GitHub for source history and portability.
-- The live Cloudflare Pages project currently deploys through Wrangler Direct Upload.
-- Custom domains `aster-forge.com` and `www.aster-forge.com` are active.
-- If true Git-triggered continuous deployment becomes important, create a fresh Git-integrated Pages project or migrate intentionally; do not upload the OpenClaw factory repo.
+- The existing Pages project exposes **Settings → Git repository → Connect**, but no repository is linked yet.
+- Until that one-time connection is completed, a GitHub push is source control only; it does not update the live domain.
+- The current approved production path is Cloudflare Pages Direct Upload to this existing project, following a GitHub commit. It preserves the active domains and has a verified deployment history. A future Git connection can replace the final Direct Upload step only after a successful proof deployment.

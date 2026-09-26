@@ -1,23 +1,12 @@
-document.querySelectorAll("[data-repair-slider]").forEach((slider) => {
-  const input = slider.querySelector("input[type='range']");
-  if (!input) {
-    return;
-  }
-
-  const update = () => slider.style.setProperty("--split", `${input.value}%`);
-  input.addEventListener("input", update);
-  update();
-});
-
 const packageByScope = {
-  "one weak image or page": {
-    label: "Recommended start: P1 Watermarked Preview",
-    packageName: "P1 Watermarked Preview",
+  "single curated gift or poster": {
+    label: "Recommended start: P1 Signature Direction",
+    packageName: "P1 Signature Direction",
     budget: "$49 - $129",
   },
-  "three to eight image refresh": {
-    label: "Recommended start: P2 Refresh Sprint",
-    packageName: "P2 Refresh Sprint",
+  "three-surface gift or product set": {
+    label: "Recommended start: P2 Presentation Set",
+    packageName: "P2 Presentation Set",
     budget: "$199 - $349",
   },
   "new launch kit": {
@@ -25,9 +14,9 @@ const packageByScope = {
     packageName: "P3 Launch Kit",
     budget: "$399 - $699",
   },
-  "monthly visual maintenance": {
-    label: "Recommended start: P4 Visual Maintenance",
-    packageName: "P4 Visual Maintenance",
+  "collection or recurring art direction": {
+    label: "Recommended start: P4 Collection Direction",
+    packageName: "P4 Collection Direction",
     budget: "$199 - $399/mo",
   },
 };
@@ -41,23 +30,23 @@ document.querySelectorAll("[data-request-builder]").forEach((form) => {
 
   const getBrief = () => {
     const data = Object.fromEntries(new FormData(form).entries());
-    const packageInfo = packageByScope[data.scope] || packageByScope["one weak image or page"];
-    const weakPoint = data.weakPoint?.trim() || "[paste weak image link or short description]";
+    const packageInfo = packageByScope[data.scope] || packageByScope["single curated gift or poster"];
+    const projectContext = data.weakPoint?.trim() || "[recipient or buyer, occasion, references, cultural cues and intended use]";
     return {
       data,
       packageInfo,
       text: [
-        "Aster Forge preview request",
+        "Aster Forge design brief",
         "",
-        `Business type: ${data.businessType}`,
-        `Current weak point: ${weakPoint}`,
-        `Target buyer surface: ${data.surface}`,
+        `Request type: ${data.businessType}`,
+        `Starting context: ${projectContext}`,
+        `Intended surface: ${data.surface}`,
         `Desired direction: ${data.direction}`,
-        `Scope: ${data.scope}`,
+        `Delivery scope: ${data.scope}`,
         `Recommended package: ${packageInfo.packageName}`,
         `Expected budget frame: ${packageInfo.budget}`,
         "",
-        "Please start with a watermarked proof or visual diagnosis before full-resolution delivery.",
+        "Please confirm the design direction and acceptance boundary before final production files are released.",
       ].join("\n"),
     };
   };
@@ -94,7 +83,7 @@ document.querySelectorAll("[data-request-builder]").forEach((form) => {
     try {
       await navigator.clipboard.writeText(text);
       if (status) {
-        status.textContent = "Generated brief copied. Paste it into the chosen contact channel and attach one current image or link.";
+        status.textContent = "Generated brief copied. Paste it into the chosen contact channel and attach references or a short context note.";
       }
     } catch (_) {
       if (status) {
@@ -131,7 +120,7 @@ document.querySelectorAll("[data-prefill-request]").forEach((link) => {
     form.dispatchEvent(new Event("change", { bubbles: true }));
     const status = document.querySelector("[data-copy-status]");
     if (status) {
-      status.textContent = "Builder prefilled from the selected playbook. Add the weak image link or short description next.";
+      status.textContent = "Builder prefilled from the selected playbook. Add the recipient, buyer context or reference note next.";
     }
   });
 });

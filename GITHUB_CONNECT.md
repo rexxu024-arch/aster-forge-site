@@ -26,12 +26,6 @@ cookies or tokens into this repo.
 
 ## Cloudflare Pages
 
-Current production path:
-
-```powershell
-npx wrangler pages deploy . --project-name aster-forge --branch main
-```
-
 The live project is:
 
 ```text
@@ -46,27 +40,30 @@ https://www.aster-forge.com
 https://aster-forge.pages.dev
 ```
 
-Important: the current project was created through Wrangler/Direct Upload.
-Direct Upload is stable and simple, but it is not a Git-triggered Pages project.
-Keep pushing this repo to GitHub for source backup, then deploy with Wrangler.
+Fresh Cloudflare dashboard readback — 2026-09-26:
 
-Optional future migration to Git-triggered Pages:
+- Existing Pages project: `aster-forge`
+- Existing production branch: `main`
+- Current state: **No Git connection**
+- Available control: **Settings → Git repository → Connect**
 
-1. Workers & Pages
-2. Create application
-3. Pages
-4. Connect to Git
-5. Pick `aster-forge-site`
-6. Build command: empty
-7. Build output directory: `/`
-8. Move custom domains only after the new Pages project is verified
+Required Git-route setup, without creating a replacement project or moving domains:
 
-Fallback:
+1. Open the existing `aster-forge` Pages project.
+2. Select **Settings → Git repository → Connect**.
+3. Authorize or select `rexxu024-arch/aster-forge-site` only.
+4. Retain `main` as the production branch. This is a static site: no build command and root output directory.
+5. Verify a harmless Git commit produces a successful Cloudflare production deployment before treating the route as operational.
 
-```powershell
-npx wrangler login --browser=false
-npx wrangler pages deploy . --project-name aster-forge
-```
+Until that connection is visibly confirmed, GitHub pushes are source-history updates only.
 
-When `--browser=false` prints an authorization URL, open it in the shared Edge
-profile, not Chrome. After approval, rerun the deploy command from this folder.
+## Current stable release path
+
+Until the Git connection is explicitly validated in production, use this release sequence:
+
+1. Commit and push the public-safe change to `main` with a professional message.
+2. Run `npx wrangler whoami` to verify the intended Cloudflare account.
+3. Run `npx wrangler pages deploy . --project-name aster-forge --branch main` from this repository.
+4. Verify the production deployment record, custom domain, critical route redirect, and public assets.
+
+This retains the existing `aster-forge` Pages project and its domain bindings. It is not a fallback upload; it is the present production release route. Git-triggered deployment becomes the replacement only after the repository connection succeeds and a Git commit creates a verified production deployment.

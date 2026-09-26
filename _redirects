@@ -4,8 +4,10 @@
 /packages /#packages 302
 /contact /#contact 302
 /audit /#audit 302
+/demo /#demo-spine 302
 /buyers /#fit 302
 /fit-check /#fit-check 302
 /start /#start 302
 /proof /#lab 302
-/repair /before-after.html 302
+/before-after.html /custom-gifts.html 301
+/repair /custom-gifts.html 302
