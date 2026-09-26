@@ -536,6 +536,10 @@ h1 {
   max-width: 14ch;
 }
 
+.collection-hero-actions {
+  margin-top: 1.35rem;
+}
+
 .collection-hero p:not(.eyebrow),
 .collection-section-heading > p,
 .collection-boundary p {
