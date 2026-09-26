@@ -4,6 +4,13 @@ Last updated by `sync_public_repo.py`.
 
 ## Verified production release — 2026-09-26
 
+- Current production layout commit: `3ebf76a61cec72d55fed8331bb4a421473c660a8` — `feat(aster): prioritize custom gifts across entry paths`
+- Current Cloudflare Pages production deployment: `https://012ae327.aster-forge.pages.dev`
+- Current public hierarchy: **Custom Gifts** is the first navigation item, primary hero CTA, hero narrative and first showcase; **Launch Systems** is positioned as a scoped commercial extension.
+- Current live sentinels passed: homepage headline and `01 / FLAGSHIP CUSTOM GIFTS` marker are present; Collection exposes its two front-loaded CTAs and all three posters; `/before-after` redirects to the Collection; no console errors were observed.
+
+## Prior production release — 2026-09-26
+
 - GitHub source commit: `4a56142d9ef6682e24f90e467441f881ef15f09c` — `feat(aster): launch context-led custom gift collection`
 - Cloudflare Pages production deployment: `https://7dd7f22f.aster-forge.pages.dev`
 - Release payload: 84 public runtime files / 10.38 MiB, uploaded as a static-only archive. It contained the site runtime, `_headers`, `_redirects`, and public assets only—no Git internals, credentials, factory sources, or private delivery material.
